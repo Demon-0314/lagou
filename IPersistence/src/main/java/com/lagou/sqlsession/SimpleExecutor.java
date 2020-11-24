@@ -52,10 +52,10 @@ public class SimpleExecutor implements Executor {
         ResultSet resultSet = preparedStatement.executeQuery();
         String resultType = mappedStatement.getResultType();
         Class<?> resultTypeClass = getClassType(resultType);
-        Object obj = resultTypeClass.newInstance();
         ArrayList<Object> objects = new ArrayList<>();
         // 6.封装返回结果集
         while (resultSet.next()) {
+            Object obj = resultTypeClass.newInstance();
             ResultSetMetaData metaData = resultSet.getMetaData();
             for (int i = 1; i <= metaData.getColumnCount(); i++) {
                 // 字段名
