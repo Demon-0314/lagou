@@ -1,7 +1,9 @@
 package com.lagou.test;
 
+import com.lagou.dao.IUserDao;
 import com.lagou.io.Resources;
 import com.lagou.pojo.User;
+import com.lagou.sqlsession.DefaultSqlSession;
 import com.lagou.sqlsession.SqlSession;
 import com.lagou.sqlsession.SqlSessionFactory;
 import com.lagou.sqlsession.SqlSessionFactoryBuilder;
@@ -13,6 +15,7 @@ import java.beans.PropertyVetoException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @ClassName IPersistenceTest
@@ -24,7 +27,7 @@ import java.sql.SQLException;
 public class IPersistenceTest {
 
     @Test
-    public void test() throws DocumentException, PropertyVetoException, IllegalAccessException, IntrospectionException, InstantiationException, NoSuchFieldException, SQLException, InvocationTargetException, ClassNotFoundException {
+    public void test() throws Exception {
         InputStream resourceAsSteam = Resources.getResourceAsSteam("sqlMapConfig.xml");
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsSteam);
         SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -33,7 +36,13 @@ public class IPersistenceTest {
         User user = new User();
         user.setId(1L);
         user.setUsername("张飞");
-        User user2 = sqlSession.selectOne("user.selectOne", user);
+        IUserDao userDao  = sqlSession.getMapper(IUserDao.class);
+        User user2 = userDao.findByCondition(user);
         System.out.println(user2.toString());
+        System.out.println("======================================");
+        List<User> all = userDao.findAll();
+        for (User user1 : all) {
+            System.out.println(user1.toString());
+        }
     }
 }

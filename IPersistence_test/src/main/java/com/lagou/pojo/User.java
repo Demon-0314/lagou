@@ -12,7 +12,7 @@ public class User {
      * id
      */
     private Long id;
-    
+
     /**
      * 名称
      */
