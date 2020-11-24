@@ -19,6 +19,11 @@ import java.util.List;
  * @Version 1.0
  */
 public class MybatisTest {
+    /**
+     * 查询用户
+     *
+     * @throws IOException
+     */
     @Test
     public void test1() throws IOException {
         InputStream inputStream = Resources.getResourceAsStream("sqlMapConfig.xml");
@@ -31,5 +36,57 @@ public class MybatisTest {
         }
         sqlSession.close();
 
+    }
+
+    /**
+     * 新增用户
+     *
+     * @throws IOException
+     */
+    @Test
+    public void test2() throws IOException {
+        InputStream inputStream = Resources.getResourceAsStream("sqlMapConfig.xml");
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        User user = new User();
+        user.setId(3);
+        user.setUsername("赵云");
+        sqlSession.insert("user.saveUser", user);
+        sqlSession.commit();
+        sqlSession.close();
+
+    }
+
+    /**
+     * 更新用户
+     *
+     * @throws IOException
+     */
+    @Test
+    public void test3() throws IOException {
+        InputStream inputStream = Resources.getResourceAsStream("sqlMapConfig.xml");
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        User user = new User();
+        user.setId(3);
+        user.setUsername("");
+        sqlSession.update("user.updateUser", user);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+    /**
+     * 删除
+     *
+     * @throws IOException
+     */
+    @Test
+    public void test4() throws IOException {
+        InputStream inputStream = Resources.getResourceAsStream("sqlMapConfig.xml");
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        sqlSession.delete("user.deleteUser", 3);
+        sqlSession.commit();
+        sqlSession.close();
     }
 }
