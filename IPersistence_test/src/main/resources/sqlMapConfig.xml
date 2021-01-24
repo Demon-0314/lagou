@@ -10,5 +10,4 @@
 
     <!--存放mapper.xml的全路径-->
     <mapper resource="UserMapper.xml"></mapper>
-
 </configuration>

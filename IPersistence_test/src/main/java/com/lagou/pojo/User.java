@@ -3,7 +3,7 @@ package com.lagou.pojo;
 /**
  * @ClassName User
  * @Description TODO
- * @Author demon
+ * @Author 智弘
  * @Date 2020/11/22 23:55
  * @Version 1.0
  */

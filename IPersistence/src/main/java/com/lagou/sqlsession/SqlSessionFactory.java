@@ -3,7 +3,7 @@ package com.lagou.sqlsession;
 /**
  * @ClassName SqlSessionFactory
  * @Description TODO
- * @Author demon
+ * @Author 智弘
  * @Date 2020/11/22 21:14
  * @Version 1.0
  */

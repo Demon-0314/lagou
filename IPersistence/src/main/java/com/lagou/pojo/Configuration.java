@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * @ClassName Configuration
  * @Description TODO
- * @Author demon
+ * @Author 智弘
  * @Date 2020/11/22 20:20
  * @Version 1.0
  */
@@ -19,7 +19,7 @@ public class Configuration {
     /**
      * 初始化一个map对象装MappedStatement对象
      */
-    Map<String,MappedStatement> mappedStatementMap = new HashMap<>();
+    Map<String, MapperStatement> mapperStatementMap = new HashMap<>();
 
     public DataSource getDataSource() {
         return dataSource;
@@ -28,12 +28,12 @@ public class Configuration {
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
-
-    public Map<String, MappedStatement> getMappedStatementMap() {
-        return mappedStatementMap;
+    public Map<String, MapperStatement> getMapperStatementMap() {
+        return mapperStatementMap;
     }
 
-    public void setMappedStatementMap(Map<String, MappedStatement> mappedStatementMap) {
-        this.mappedStatementMap = mappedStatementMap;
+    public void setMappedStatementMap(Map<String, MapperStatement> mappedStatementMap) {
+        this.mapperStatementMap = mappedStatementMap;
     }
+
 }

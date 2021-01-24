@@ -16,7 +16,7 @@ import java.util.Properties;
 /**
  * @ClassName XMLConfingBuilder
  * @Description TODO
- * @Author demon
+ * @Author 智弘
  * @Date 2020/11/22 21:42
  * @Version 1.0
  */

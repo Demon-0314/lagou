@@ -3,13 +3,13 @@ package com.lagou.pojo;
 import com.sun.org.apache.xerces.internal.impl.xpath.XPath;
 
 /**
- * @ClassName MappedStatement
+ * @ClassName MapperStatement
  * @Description TODO
- * @Author demon
+ * @Author 智弘
  * @Date 2020/11/22 20:14
  * @Version 1.0
  */
-public class MappedStatement {
+public class MapperStatement {
     /**
      * id标识
      */
@@ -26,6 +26,10 @@ public class MappedStatement {
      * sql语句
      */
     private String sql;
+    /**
+     * crud类型
+     */
+    private String crudType;
 
     public String getId() {
         return id;
@@ -57,5 +61,13 @@ public class MappedStatement {
 
     public void setSql(String sql) {
         this.sql = sql;
+    }
+
+    public String getCrudType() {
+        return crudType;
+    }
+
+    public void setCrudType(String crudType) {
+        this.crudType = crudType;
     }
 }

@@ -5,7 +5,7 @@ import com.lagou.pojo.Configuration;
 /**
  * @ClassName DefaultSqlSessionFactory
  * @Description TODO
- * @Author demon
+ * @Author 智弘
  * @Date 2020/11/22 23:37
  * @Version 1.0
  */
