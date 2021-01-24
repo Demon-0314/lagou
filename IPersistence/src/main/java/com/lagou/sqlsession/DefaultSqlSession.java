@@ -2,8 +2,6 @@ package com.lagou.sqlsession;
 
 import com.lagou.pojo.Configuration;
 import com.lagou.pojo.MapperStatement;
-
-import javax.swing.*;
 import java.beans.IntrospectionException;
 import java.lang.reflect.*;
 import java.sql.SQLException;
